@@ -2,14 +2,22 @@ import React, { useState } from 'react';
 import LabelWithInput from './LabelWithInput';
 
 
-type ReservationType = {
+export type ReservationType = {
   name: string;
   email: string;
   number: number;
 };
 
-const AddReservation = () => {
-  const [form, setForm] = useState<Partial<ReservationType>>({})
+type AddReservationProps = {
+  onAdd: (reservation: ReservationType) => void;
+}
+
+const AddReservation: React.FC<AddReservationProps> = ({onAdd}) => {
+  const [form, setForm] = useState<ReservationType>({
+    name: '',
+    email: '',
+    number: 1
+  });
 
   const onChange = (name: string, value: string) => {
     setForm({
@@ -20,7 +28,8 @@ const AddReservation = () => {
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    alert(JSON.stringify(form));
+
+    onAdd(form);
   }
 
   return (
