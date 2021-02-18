@@ -13,11 +13,13 @@ type AddReservationProps = {
 }
 
 const AddReservation: React.FC<AddReservationProps> = ({onAdd}) => {
-  const [form, setForm] = useState<ReservationType>({
+  const initialState = {
     name: '',
     email: '',
     number: 1
-  });
+  };
+
+  const [form, setForm] = useState<ReservationType>(initialState);
 
   const onChange = (name: string, value: string) => {
     setForm({
@@ -29,6 +31,7 @@ const AddReservation: React.FC<AddReservationProps> = ({onAdd}) => {
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    setForm(initialState);
     onAdd(form);
   }
 
@@ -36,9 +39,9 @@ const AddReservation: React.FC<AddReservationProps> = ({onAdd}) => {
     <div>
       <h1>اضافة حجز</h1>
       <form onSubmit={onSubmit}>
-        <LabelWithInput onChange={onChange} name="name" placeholder="الاسم"/>
-        <LabelWithInput onChange={onChange} name="email" placeholder="الايميل"/>
-        <LabelWithInput onChange={onChange} name="number" placeholder="العدد" type="number"/>
+        <LabelWithInput value={form.name} onChange={onChange} name="name" placeholder="الاسم"/>
+        <LabelWithInput value={form.email} onChange={onChange} name="email" placeholder="الايميل"/>
+        <LabelWithInput value={form.number} onChange={onChange} name="number" placeholder="العدد" type="number"/>
         <div>
           <input type="submit" value="اضافة حجز"/>
         </div>
