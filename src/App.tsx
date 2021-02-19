@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import AddReservation from './components/AddReservation';
 import ReservationsList from './components/ReservationsList';
-import "./App.css";
 import { ReservationType } from './components/AddReservation';
 
 
@@ -15,14 +14,22 @@ const App = () => {
     ])
   }
   return (
-    <div className="app">
-      <header className="header">
-        <h1>
-          مطعمنا
-        </h1>
+    <div>
+      <header className="site-logo bg-blue-600 py-10 text-white text-5xl">
+            مطعمنا
       </header>
-      <AddReservation onAdd={onAddReservation}/>
-      <ReservationsList reservations={reservations}/>
+      <div className="container">
+        
+        <div className="w-full flex">
+          <div className="flex-1 ml-4">
+            <AddReservation onAdd={onAddReservation}/>
+          </div>
+          <div className="w-1/3">
+            <ReservationsList reservations={reservations}/>
+          </div>
+
+        </div>
+      </div>
     </div>
   );
 }

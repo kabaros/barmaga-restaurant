@@ -2,12 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'NotoKufi';
+    src: url('./assets/fonts/NotoKufiArabic-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NotoKufi';
+    font-weight: bold;
+    src: url('./assets/fonts/NotoKufiArabic-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Noto';
+    src: url('./assets/fonts/NotoSansArabicUI-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Noto';
+    font-weight: bold;
+    src: url('./assets/fonts/NotoSansArabicUI-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Noto';
+    font-weight: lighter;
+    src: url('./assets/fonts/NotoSansArabicUI-Light.ttf') format('truetype');
+}
+
 @layer components {
-    .button {
-        @apply bg-red-100;
-        @apply border;
-        @apply border-2;
-        @apply border-red-200;
-        @apply w-full;
+    body {
+        direction: rtl;
+    }
+    label {
+        @apply block text-lg mb-2;
+    }
+    input {
+        @apply block flex-1 w-full p-2 border;
+    }
+    input[type=submit] {
+        @apply block flex-1 w-full p-2 text-xl border text-center bg-blue-300 max-w-xs mx-auto;
+        @apply font-title;
+        @apply text-blue-900;
+        @apply cursor-pointer;
+    }
+    .reservation-list {
+        @apply w-full shadow-lg bg-white;
+    }
+    .reservation-list th {
+        @apply bg-blue-100 font-light border text-left px-8 py-4;
+    }
+    .reservation-list tbody td {
+        @apply border px-8 py-4 text-center;
+    }
+    .card {
+        @apply shadow-lg p-4 m-4 border border-blue-100;
+    }
+    .site-logo {
+        @apply font-title text-3xl text-4xl text-center mb-6;
+    }
+    .container {
+        @apply font-normal max-w-5xl mx-auto m-4 p-10;
     }
 }

@@ -8,12 +8,14 @@ type ReservationListProps = {
 const ReservationsList: React.FC<ReservationListProps> = ({reservations}) => {
   return (
     <div>
-      <h2>قائمة الحجز</h2>
-      <table>
+      <h2 className="text-3xl mb-4">قائمة الحجوزات</h2>
+      <table className="reservation-list">
         <thead>
-          <td>الاسم</td>
-          <td>الايميل</td>
-          <td>العدد</td>
+          <tr>
+            <th>الاسم</th>
+            <th>الايميل</th>
+            <th>العدد</th>
+          </tr>
         </thead>
         <tbody>
           {reservations.map((reservation, index) => {

@@ -15,7 +15,7 @@ const LabelWithInput: React.FC<LabelWithInputProps> = (props) => {
     onChange(event.target.name, event.target.value);
   };
 
-  return (<div>
+  return (<div className="my-2">
     <label htmlFor={name}>{placeholder}</label>
     <input value={value} onChange={handleChange} type={type} placeholder={placeholder} name={name}></input>
   </div>);

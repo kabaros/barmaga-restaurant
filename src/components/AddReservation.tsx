@@ -36,14 +36,14 @@ const AddReservation: React.FC<AddReservationProps> = ({onAdd}) => {
   }
 
   return (
-    <div>
-      <h1>اضافة حجز</h1>
-      <form onSubmit={onSubmit}>
+    <div className="card">
+      <h1 className="font-bold">اضافة حجز</h1>
+      <form className="" onSubmit={onSubmit}>
         <LabelWithInput value={form.name} onChange={onChange} name="name" placeholder="الاسم"/>
         <LabelWithInput value={form.email} onChange={onChange} name="email" placeholder="الايميل"/>
         <LabelWithInput value={form.number} onChange={onChange} name="number" placeholder="العدد" type="number"/>
         <div>
-          <input className="button w-full md:w-1/3" type="submit" value="اضافة حجز"/>
+          <input className="mt-4" type="submit" value="اضافة حجز"/>
         </div>
       </form>
     </div>
