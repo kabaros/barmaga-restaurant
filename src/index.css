@@ -50,7 +50,7 @@
         @apply w-full shadow-lg bg-white;
     }
     .reservation-list th {
-        @apply bg-blue-100 font-light border text-left px-8 py-4;
+        @apply bg-blue-100 font-light border text-left p-4;
     }
     .reservation-list tbody td {
         @apply border px-8 py-4 text-center;
@@ -62,6 +62,6 @@
         @apply font-title text-3xl text-4xl text-center mb-6;
     }
     .container {
-        @apply font-normal max-w-5xl mx-auto m-4 p-10;
+        @apply font-normal max-w-5xl mx-auto m-4 p-5;
     }
 }

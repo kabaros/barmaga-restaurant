@@ -14,23 +14,23 @@ const App = () => {
     ])
   }
   return (
-    <div>
+    <>
       <header className="site-logo bg-blue-600 py-10 text-white text-5xl">
             مطعمنا
       </header>
       <div className="container">
         
-        <div className="w-full flex">
+        <div className="w-full flex flex-wrap">
           <div className="flex-1 ml-4">
             <AddReservation onAdd={onAddReservation}/>
           </div>
-          <div className="w-1/3">
+          <div className="w-2/5">
             <ReservationsList reservations={reservations}/>
           </div>
 
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

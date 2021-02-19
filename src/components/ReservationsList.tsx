@@ -5,11 +5,15 @@ type ReservationListProps = {
   reservations: ReservationType[]
 }
 
+// conditional rendering 
 const ReservationsList: React.FC<ReservationListProps> = ({reservations}) => {
+  const hasReservations = reservations.length > 0;
+
   return (
     <div>
       <h2 className="text-3xl mb-4">قائمة الحجوزات</h2>
-      <table className="reservation-list">
+      {!hasReservations&& <div className="text-xs text-gray">لا توجد حجوزات</div>}
+      {hasReservations && <table className="reservation-list">
         <thead>
           <tr>
             <th>الاسم</th>
@@ -26,7 +30,7 @@ const ReservationsList: React.FC<ReservationListProps> = ({reservations}) => {
             </tr>
           })}
         </tbody>
-      </table>
+      </table>}
     </div>
   );
 };
