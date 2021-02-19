@@ -43,7 +43,7 @@ const AddReservation: React.FC<AddReservationProps> = ({onAdd}) => {
         <LabelWithInput value={form.email} onChange={onChange} name="email" placeholder="الايميل"/>
         <LabelWithInput value={form.number} onChange={onChange} name="number" placeholder="العدد" type="number"/>
         <div>
-          <input type="submit" value="اضافة حجز"/>
+          <input className="button w-full md:w-1/3" type="submit" value="اضافة حجز"/>
         </div>
       </form>
     </div>
